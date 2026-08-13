@@ -1,0 +1,76 @@
+# =========================
+# Build directories
+# =========================
+build/
+build-*/
+out/
+bin/
+bin-*/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# =========================
+# CMake
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+*.cmake.user
+
+# =========================
+# C / C++ generated files
+# =========================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+
+# Precompiled headers
+*.gch
+*.pch
+
+# =========================
+# Vulkan / GLSL / Shader build output
+# =========================
+*.spv
+*.spirv
+
+# =========================
+# CCLS / Clang tooling
+# =========================
+.ccls-cache/
+.clangd/
+.clang-tidy
+.clang-format
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# Ninja
+# =========================
+.ninja_deps
+.ninja_log
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
