@@ -12,8 +12,11 @@ class VulkanCommence
 {
 
 private: 
+  
+  VkInstance instance;
+
   VulkanCommence();
-  ~VulkanCommence() = default;
+  ~VulkanCommence(); 
 
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback (
       VkDebugUtilsMessageSeverityFlagBitsEXT,

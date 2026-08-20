@@ -19,13 +19,11 @@ VulkanCommence::VulkanCommence()
         VK_EXT_DEBUG_UTILS_EXTENSION_NAME
       };
 
-     uint32_t extensionsCount = 0;
+      uint32_t extensionsCount = 0;
       const char** glfwExtensions = glfwGetRequiredInstanceExtensions(&extensionsCount);
 
       for(int i=0; i<extensionsCount; i++)
-      {
         requestedExtensions.push_back(glfwExtensions[i]);
-      }
 
       std::vector<const char *> requestedLayers
       {
@@ -55,6 +53,9 @@ VulkanCommence::VulkanCommence()
           .ppEnabledExtensionNames = requestedExtensions.data(),
       };
 
+      if( vkCreateInstance(&instCreateInfo, nullptr, &instance) != VK_SUCCESS ) 
+          throw std::runtime_error("failed to create vulkan instance :( "); 
+
 }
 
 VKAPI_ATTR VkBool32 VKAPI_CALL VulkanCommence::debugCallback (
@@ -74,4 +75,9 @@ VulkanCommence& VulkanCommence::getTheOnlyObject()
 {
     static VulkanCommence instance;
     return instance;
+}
+
+VulkanCommence::~VulkanCommence(){
+    vkDestroyInstance(instance, nullptr);
+
 }
