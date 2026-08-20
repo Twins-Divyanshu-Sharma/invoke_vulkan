@@ -1,7 +1,7 @@
 #include "Window.hpp"
 
-
-invoker::Window::Window(){
+invoker::Window::Window()
+{
 
   bool b =  glfwInit();
 
@@ -14,22 +14,26 @@ invoker::Window::Window(){
 
   invoker::Window::window = glfwCreateWindow(HEIGHT, WIDTH, TITLE, nullptr, nullptr);
 
-  if(!window){
+  if(!window)
+  {
       glfwTerminate();
       throw std::runtime_error("Failed to create GLFW window");
   }
 }
 
-invoker::Window::~Window() {
+invoker::Window::~Window() 
+{
     if(window)
         glfwDestroyWindow(window);
     glfwTerminate();
 }
 
-bool invoker::Window::close(){
-    return glfwWindowShouldClose(window);
+bool invoker::Window::close()
+{
+  return glfwWindowShouldClose(window);
 }
 
-void invoker::Window::poll(){
+void invoker::Window::poll()
+{
   glfwPollEvents();
 }

@@ -1,12 +1,14 @@
-#ifndef INVOKED_WINDOW_HPP
-#define INVOKED_WINDOW_HPP
+#ifndef H_INVOKED_WINDOW_H
+#define H_INVOKED_WINDOW_H
 
 #include "GLFW/glfw3.h"
 #include <stdexcept>
 
-namespace invoker{
+namespace invoker
+{
 
-class Window{
+class Window
+{
 
 private:
   GLFWwindow* window;
