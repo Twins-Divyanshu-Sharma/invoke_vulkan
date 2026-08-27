@@ -6,13 +6,19 @@
 
 namespace invoker::setup_vulkan
 {
-   struct QueueFamilyIndicies {
+   struct QueueFamilyIndicies
+   {
         std::optional<uint32_t> graphicsFamily;
         bool isComplete(); 
     };
   
     QueueFamilyIndicies findQueueFamilies(VkPhysicalDevice device);
-    bool isDeviceSuitable(VkPhysicalDevice);
+    
+    namespace 
+    {
+       bool isDeviceSuitable(VkPhysicalDevice);
+    }
+
 }
 
 

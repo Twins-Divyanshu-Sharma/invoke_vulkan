@@ -5,8 +5,7 @@ namespace invoker::setup_vulkan
 
     bool QueueFamilyIndicies::isComplete()
     {
-        return graphicsFamily.has_value();
-
+       return graphicsFamily.has_value();
     }
 
     QueueFamilyIndicies findQueueFamilies(VkPhysicalDevice device)
@@ -39,5 +38,3 @@ namespace invoker::setup_vulkan
     }
 
 }
-
-
