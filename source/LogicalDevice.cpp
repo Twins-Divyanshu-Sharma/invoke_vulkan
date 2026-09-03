@@ -30,21 +30,11 @@ namespace invoker::vulkan_setup::logical_device
             .pEnabledFeatures = &deviceFeatures
         };
 
-        if (vkCreateDevice(
-                physicalDevice,
-                &createInfo,
-                nullptr,
-                &device) != VK_SUCCESS)
-        {
+        if (vkCreateDevice(physicalDevice, &createInfo, nullptr,&device) != VK_SUCCESS)
             throw std::runtime_error("Failed to create logical device!");
-        }
+        
 
-        vkGetDeviceQueue(
-            device,
-            indices.graphicsFamily.value(),
-            0,
-            &graphicsQueue
-        );
+        vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
     }
 
     void cleanup()
