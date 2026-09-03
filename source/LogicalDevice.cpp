@@ -1,6 +1,6 @@
 #include "LogicalDevice.hpp"
 
-namespace invoker::vulkan_setup::logical_device
+namespace invoker::setup_vulkan::logical_device
 {
     VkDevice device = VK_NULL_HANDLE;
     VkQueue graphicsQueue = VK_NULL_HANDLE;
@@ -9,8 +9,8 @@ namespace invoker::vulkan_setup::logical_device
     {
         float queuePriority = 1.0f;
 
-        invoker::setup_vulkan::QueueFamilyIndicies indices =
-            invoker::setup_vulkan::findQueueFamilies(physicalDevice);
+        invoker::setup_vulkan::queue_family::QueueFamilyIndicies indices =
+        invoker::setup_vulkan::queue_family::findQueueFamilies(physicalDevice);
 
         VkDeviceQueueCreateInfo queueCreateInfo
         {

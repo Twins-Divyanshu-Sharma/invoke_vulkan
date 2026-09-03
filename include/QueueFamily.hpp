@@ -4,7 +4,7 @@
 #include <optional>
 #include <vulkan/vulkan.hpp>
 
-namespace invoker::setup_vulkan
+namespace invoker::setup_vulkan::queue_family
 {
    struct QueueFamilyIndicies
    {
@@ -14,11 +14,6 @@ namespace invoker::setup_vulkan
   
     QueueFamilyIndicies findQueueFamilies(VkPhysicalDevice device);
     
-    namespace 
-    {
-       bool isDeviceSuitable(VkPhysicalDevice);
-    }
-
 }
 
 

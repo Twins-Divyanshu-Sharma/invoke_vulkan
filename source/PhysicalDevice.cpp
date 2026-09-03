@@ -32,6 +32,8 @@ namespace invoker::setup_vulkan::physical_device
 
   }
 
+namespace 
+{
 
   bool isDeviceSuitable(VkPhysicalDevice device)
   {
@@ -65,5 +67,7 @@ namespace invoker::setup_vulkan::physical_device
 
       return score;
   }
+
+}
 
 }

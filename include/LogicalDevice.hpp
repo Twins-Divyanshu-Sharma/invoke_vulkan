@@ -3,7 +3,7 @@
 
 #include "QueueFamily.hpp"
 
-namespace invoker::vulkan_setup::logical_device
+namespace invoker::setup_vulkan::logical_device
 {
     void create(VkPhysicalDevice& physicalDevice);
     void cleanup();

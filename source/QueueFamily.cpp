@@ -1,6 +1,6 @@
 #include "QueueFamily.hpp"
 
-namespace invoker::setup_vulkan
+namespace invoker::setup_vulkan::queue_family
 {
 
     bool QueueFamilyIndicies::isComplete()
@@ -31,10 +31,15 @@ namespace invoker::setup_vulkan
         return indices;
     }
 
-    bool isDeviceSuitable(VkPhysicalDevice device)
+    namespace
     {
-        QueueFamilyIndicies indices = findQueueFamilies(device);
-        return indices.isComplete();
+
+        bool isDeviceSuitable(VkPhysicalDevice device)
+        {
+            QueueFamilyIndicies indices = findQueueFamilies(device);
+            return indices.isComplete();
+        }
+
     }
 
 }
